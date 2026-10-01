@@ -7,9 +7,8 @@
 
 /* ---------- 1) Design Tokens ---------- */
 
-
-/* ---------- 1b) Hell-Theme ---------- */
-:root[data-theme="light"] {
+/* Standard Light Theme (Fallback) */
+:root {
   --bg: #cfd1d6;
   --panel: #f8f8fa;
   --panel-alt: #ececef;
@@ -21,16 +20,16 @@
   --accent: #2671C3;
   --accent2: #2671C3;
   
-   --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-   --radius: 22px;
+  --radius: 22px;
   --max-width: 1180px;
   color-scheme: light;
 }
 
-:root[data-theme="light"] .slicer-cta { color: var(--text-dim); }
+:root .slicer-cta { color: var(--text-dim); }
 
 /* ---------- 2) Reset ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -316,10 +315,8 @@ nav {
 .theme-toggle svg { width: 20px; height: 20px; }
 
 .theme-toggle .spool-core { fill: var(--panel-alt); stroke: var(--text-dim); stroke-width: 1.2; }
-.theme-toggle .spool-fill { fill: var(--accent); }
+.theme-toggle .spool-fill { fill: var(--accent2); }
 .theme-toggle .spool-ring { stroke: var(--text-dim); stroke-width: 1.2; fill: none; }
-
-:root[data-theme="light"] .theme-toggle .spool-fill { fill: var(--accent2); }
 
 /* Cart-Toggle Button */
 .cart-toggle {
@@ -998,63 +995,4 @@ footer {
 .cart-footer {
   padding: 16px;
   border-top: 1px solid var(--line);
-}
-
-.cart-checkout {
-  width: 100%;
-  justify-content: center;
-}
-
-.cart-checkout:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* ---------- 13) Responsive ---------- */
-@media (max-width: 880px) {
-  .hero-grid,
-  .about-grid,
-  .order-grid { grid-template-columns: 1fr; }
-
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .printer-vis { max-width: 380px; margin: 0 auto; }
-  
-  .modal-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .cart-panel {
-    width: 100%;
-    right: -100%;
-  }
-}
-
-@media (max-width: 560px) {
-  .wrap { padding: 0 20px; }
-  nav { padding: 16px 20px; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .hero { padding-top: 120px; }
-  
-  .modal {
-    max-width: 95%;
-  }
-  
-  .modal-content {
-    padding: 20px;
-    gap: 16px;
-  }
-  
-  .cart-panel {
-    width: 100%;
-    right: -100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}
-
-:root[data-theme="light"] .pv-head {
-  fill: #000000;
 }
